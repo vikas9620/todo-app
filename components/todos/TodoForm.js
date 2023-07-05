@@ -17,6 +17,7 @@ function TodoForm(props) {
     const taskData = {
       task: enteredTaskNameRef,
       description: enteredDescription,
+      status: "incomplete"
     };
 
     props.onAddTask(taskData);
