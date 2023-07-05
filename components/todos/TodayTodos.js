@@ -31,8 +31,9 @@ function TodayTodos(props) {
       </h2>
       <Card>
         {props.todos.map((prevtask) => (
-          <Grid container alignItems="center" spacing={2} key={prevtask.id} marginBottom={3} borderBottom={1}>
-            <Grid item>
+          <Grid container alignItems="center"  key={prevtask.id} marginBottom={3} borderBottom={1} justifyContent={"space-between"}>
+            <Grid item display={"flex"} flexDirection={"row"}>
+            <div>
               <Radio
                 checked={selectedTask === prevtask.id}
                 onChange={() => handleRadioChange(prevtask.id)}
@@ -40,15 +41,16 @@ function TodayTodos(props) {
                 name="radio-buttons"
                 inputProps={{ "aria-label": "A" }}
               />
-            </Grid>
-            <Grid item marginRight={35}>
+              </div>
+         
               <div>
                 <Typography variant="body1">{prevtask.task}</Typography>
                 <Typography variant="body2">{prevtask.description}</Typography>
               </div>
             </Grid>
-            <Grid item xs={1} sm="auto">
+            <Grid item xs={1} sm="auto" >
               <Button
+              
                 variant="contained"
                 color="success"
                 size="small"
