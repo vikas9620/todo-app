@@ -11,7 +11,7 @@ async function handler(req, res) {
     const todosCollection = db.collection("todos");
 
     try {
-      const result = await todosCollection.deleteOne({ _id: new ObjectId(id)});
+      const result = await todosCollection.deleteOne({ _id: new ObjectId(id) });
 
       if (result.deletedCount === 1) {
         res.status(200).json({ message: "Task deleted successfully" });
